@@ -50,4 +50,10 @@ LINES TERMINATED BY '\n'		/* each new line is a new record */
 IGNORE 1 ROWS;					/* ignore the header */
 
 -- testing purposes --
-select * from realestate LIMIT 10
+select * from realestate LIMIT 10;
+
+-- creating secondary indices for faster search 
+CREATE INDEX index_property_type ON realestate(Property_Type);
+CREATE INDEX index_location on realestate(Location);
+CREATE INDEX index_no_rooms ON realestate(Num_Rooms);
+CREATE INDEX index_price ON realestate(Price);
